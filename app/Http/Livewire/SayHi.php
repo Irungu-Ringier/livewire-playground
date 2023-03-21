@@ -2,25 +2,24 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Application;
 use Livewire\Component;
 
-class Index extends Component
+class SayHi extends Component
 {
 
-    public Collection $users;
+    public string $name;
+    public string $email;
 
-    public function mount()
+    public function mount($name, $email)
     {
-        $this->users= User::all();
+        $this->name = $name;
+        $this->email = $email;
     }
-
     public function render(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        return view('livewire.index');
+        return view('livewire.say-hi');
     }
 }
