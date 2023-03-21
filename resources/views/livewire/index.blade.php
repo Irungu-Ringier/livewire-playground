@@ -1,9 +1,7 @@
 <div>
     @foreach($users as $user)
         @livewire('say-hi', ['name' => $user->name, 'email' => $user->email], key($user->id))
+        <button wire:click="delete({{$user}})">Delete</button>
+        <br><br><br>
     @endforeach
-    <hr>
-    <br>
-    {{ now() }}
-    <button wire:click="$refresh">Refresh</button>
 </div>
