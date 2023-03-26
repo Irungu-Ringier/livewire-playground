@@ -14,6 +14,8 @@ class Index extends Component
 
     public Collection $users;
 
+    protected $listeners = ['foo' => '$refresh'];
+
     public function mount()
     {
         $this->users= User::all();

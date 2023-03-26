@@ -13,6 +13,8 @@ class SayHi extends Component
     public string $name;
     public string $email;
 
+    protected $listeners = ['refreshChildren' => '$refresh', 'foo' => '$refresh'];
+
     public function mount($name, $email)
     {
         $this->name = $name;
