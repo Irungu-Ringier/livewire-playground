@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:livewire="http://www.w3.org/1999/html">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -7,11 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Livewire Playground</title>
 
-        @livewireStyles
+        <livewire:styles />
     </head>
     <body>
-    @livewire('index')
+    <livewire:counter />
 
-    @livewireScripts
+    <livewire:scripts />
     </body>
 </html>
