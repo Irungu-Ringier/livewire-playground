@@ -11,7 +11,11 @@
         <livewire:styles />
     </head>
     <body>
-    <livewire:counter />
+
+
+    <main class="container mx-auto">
+        <livewire:contact-form />
+    </main>
 
     <livewire:scripts />
     </body>
