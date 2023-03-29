@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Livewire Playground</title>
 
+        @vite('resources/css/app.css')
         <livewire:styles />
     </head>
     <body>
