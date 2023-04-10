@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 use Livewire\Component;
 
 class ContactForm extends Component
@@ -14,28 +15,37 @@ class ContactForm extends Component
 
     public $successMessage;
 
+    protected $rules = [
+        'name' => 'required|min:8',
+        'email' => 'required|email',
+        'phone' => 'required|integer',
+        'message' => 'required'
+    ];
+
     /**
      * @throws ValidationException
      */
     public function submitForm()
     {
-//        $this->validate(request(), [
-//            'name' => 'required',
-//            'email' => 'required|email',
-//            'message' => 'required'
-//        ]);
-
-//        User::create([
-//            'name' => $this->name,
-//            'email' => $this->email,
-//            'password' => bcrypt($this->message)
-//        ]);
+        // Logic to save message to database
 
         $this->resetForm();
 
         $this->successMessage = 'Successfully submitted!';
     }
 
+    /**
+     * @param $propertyName
+     * @throws ValidationException
+     */
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
+    /**
+     * @return void
+     */
     public function resetForm()
     {
         $this->name = '';
@@ -44,7 +54,9 @@ class ContactForm extends Component
         $this->message = '';
     }
 
-
+    /**
+     * @return View
+     */
     public function render()
     {
         return view('livewire.contact-form');
