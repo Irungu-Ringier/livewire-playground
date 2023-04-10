@@ -16,7 +16,7 @@ class ContactForm extends Component
     public $successMessage;
 
     protected $rules = [
-        'name' => 'required|min:8',
+        'name' => 'required|min:3',
         'email' => 'required|email',
         'phone' => 'required|integer',
         'message' => 'required'
@@ -29,7 +29,7 @@ class ContactForm extends Component
     {
         // Logic to save message to database
 
-        sleep(2);
+        $this->validate();
 
         $this->resetForm();
 
@@ -37,7 +37,7 @@ class ContactForm extends Component
     }
 
     /**
-     * @param $propertyName
+     * @param $property
      * @throws ValidationException
      */
     public function updated($propertyName)
