@@ -29,6 +29,8 @@ class ContactForm extends Component
     {
         // Logic to save message to database
 
+        sleep(2);
+
         $this->resetForm();
 
         $this->successMessage = 'Successfully submitted!';
