@@ -40,40 +40,14 @@
                             class="px-6 py-3">
                             <button wire:click="sortBy('name')" class="flex bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 <span>Name</span>
-                                @if($sortField === 'name')
-                                    @if($sortAsc)
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 mb-1">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </svg>
-
-                                    @else
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 mb-1">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                                            </svg>
-                                        </div>
-                                    @endif
-                                @endif
+                                <x-sort-icon field="name" :sort_field="$sortField" :sort_asc="$sortAsc" />
                             </button>
                         </th>
                         <th
                             class="px-6 py-3">
                             <button wire:click="sortBy('email')" class="flex bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                 <span>Email</span>
-                                @if($sortField === 'email')
-                                    @if($sortAsc)
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 mb-1">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                        </svg>
-
-                                    @else
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.5" stroke="currentColor" class="w-3 h-3 mb-1">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                                            </svg>
-                                        </div>
-                                    @endif
-                                @endif
+                                <x-sort-icon field="email" :sort_field="$sortField" :sort_asc="$sortAsc" />
                             </button>
                         </th>
                         <th
@@ -86,7 +60,7 @@
                     <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($users as $user)
                         <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap">
+                            <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 h-10 w-10">
                                         <img class="h-10 w-10 rounded-full"
@@ -99,7 +73,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap">
+                            <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
                                 <div class="text-sm leading-5 text-gray-900">{{ $user->email }}</div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
