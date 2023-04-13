@@ -16,7 +16,23 @@ class DataTable extends Component
 
     public $active = false;
 
+    public $sortField;
 
+    public $sortAsc = true;
+
+    // Keep track of updates in the query string
+//    protected $queryString = ['search', 'active', 'sortField', 'sortAsc'];
+
+    public function sortBy($field)
+    {
+        if ($this->sortField === $field) {
+            $this->sortAsc = ! $this->sortAsc;
+        } else {
+            $this->sortAsc = true;
+        }
+
+        $this->sortField = $field;
+    }
 
     public function updatingSearch()
     {
@@ -36,6 +52,7 @@ class DataTable extends Component
                     $query->where('name', 'like', '%' . $this->search . '%')
                         ->orWhere('email', 'like', '%' . $this->search . '%');
                 })
+                ->orderBy($this->sortField ?? 'id', $this->sortAsc ? 'asc' : 'desc')
             ->paginate(10)
         ]);
     }

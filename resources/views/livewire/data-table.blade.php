@@ -38,11 +38,29 @@
                     <tr>
                         <th
                             class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Name
+                            <div class="flex">
+                                <span>Name</span>
+                                <button wire:click="sortBy('name')">
+                                    <svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                              d="M5 5a1 1 0 011.707 0L10 8.586 13.293 5.3A1 1 0 1114.707 6.7l-4 4a1 1 0 01-1.414 0l-4-4A1 1 0 015 5z"
+                                              clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </th>
                         <th
                             class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                            Email
+                            <div class="flex">
+                                <span>Email</span>
+                                <button wire:click="sortBy('email')">
+                                    <svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                              d="M5 5a1 1 0 011.707 0L10 8.586 13.293 5.3A1 1 0 1114.707 6.7l-4 4a1 1 0 01-1.414 0l-4-4A1 1 0 015 5z"
+                                              clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </th>
                         <th
                             class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
